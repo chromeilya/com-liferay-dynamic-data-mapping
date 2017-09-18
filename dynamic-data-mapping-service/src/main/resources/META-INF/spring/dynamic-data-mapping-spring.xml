@@ -17,6 +17,9 @@
 				<bean class="com.liferay.dynamic.data.mapping.internal.render.DecimalDDMFormFieldValueRenderer" />
 				<bean class="com.liferay.dynamic.data.mapping.internal.render.DocumentLibraryDDMFormFieldValueRenderer" />
 				<bean class="com.liferay.dynamic.data.mapping.internal.render.GeolocationDDMFormFieldValueRenderer" />
+
+				<bean class="com.liferay.dynamic.data.mapping.internal.render.GeolocationCustomDDMFormFieldValueRenderer" />
+
 				<bean class="com.liferay.dynamic.data.mapping.internal.render.IntegerDDMFormFieldValueRenderer" />
 				<bean class="com.liferay.dynamic.data.mapping.internal.render.JournalArticleDDMFormFieldValueRenderer" />
 				<bean class="com.liferay.dynamic.data.mapping.internal.render.LinkToPageDDMFormFieldValueRenderer" />
@@ -48,6 +51,9 @@
 				</entry>
 				<entry key="geolocation">
 					<bean class="com.liferay.dynamic.data.mapping.storage.impl.GeolocationFieldRenderer" />
+				</entry>
+				<entry key="geolocation-custom">
+					<bean class="com.liferay.dynamic.data.mapping.storage.impl.GeolocationCustomFieldRenderer" />
 				</entry>
 				<entry key="link-to-page">
 					<bean class="com.liferay.dynamic.data.mapping.storage.impl.LinkToPageFieldRenderer" />

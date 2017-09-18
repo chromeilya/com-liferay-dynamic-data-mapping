@@ -1214,6 +1214,45 @@ AUI.add(
 			}
 		);
 
+        var DDMGeolocationCustomField = A.Component.create(
+            {
+                ATTRS: {
+                    dataType: {
+                        value: 'geolocation-custom'
+                    },
+
+                    fieldNamespace: {
+                        value: 'ddm'
+                    },
+
+                    localizable: {
+                        setter: booleanParse,
+                        value: false
+                    }
+                },
+
+                EXTENDS: A.FormBuilderField,
+
+                NAME: 'ddm-geolocation-custom',
+
+                prototype: {
+                    getHTML: function() {
+                        return TPL_GEOLOCATION;
+                    },
+
+                    getPropertyModel: function() {
+                        var instance = this;
+
+                        return DDMGeolocationCustomField.superclass.getPropertyModel.apply(instance, arguments).filter(
+                            function(item, index) {
+                                return item.attributeName !== 'predefinedValue';
+                            }
+                        );
+                    }
+                }
+            }
+        );
+
 		var DDMImageField = A.Component.create(
 			{
 				ATTRS: {
@@ -1514,6 +1553,9 @@ AUI.add(
 			DDMDecimalField,
 			DDMDocumentLibraryField,
 			DDMGeolocationField,
+
+            DDMGeolocationCustomField,
+
 			DDMImageField,
 			DDMIntegerField,
 			DDMJournalArticleField,

@@ -657,7 +657,7 @@ public class DDMFormFieldFreeMarkerRenderer implements DDMFormFieldRenderer {
 		"ddm-geolocation", "ddm-image", "ddm-integer", "ddm-journal-article",
 		"ddm-link-to-page", "ddm-number", "ddm-paragraph", "ddm-separator",
 		"ddm-text-html", "fieldset", "option", "radio", "select", "text",
-		"textarea"
+		"textarea", "ddm-geolocation-custom"
 	};
 
 	private static final String _TPL_EXT = ".ftl";

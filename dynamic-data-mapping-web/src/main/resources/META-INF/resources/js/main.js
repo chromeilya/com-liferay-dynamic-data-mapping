@@ -848,6 +848,12 @@ AUI.add(
 					label: Liferay.Language.get('geolocation'),
 					type: 'ddm-geolocation'
 				},
+                {
+                    hiddenAttributes: MAP_HIDDEN_FIELD_ATTRS.DEFAULT,
+                    iconClass: 'icon-globe',
+                    label: Liferay.Language.get('geolocation'),
+                    type: 'ddm-geolocation-custom'
+                },
 				{
 					hiddenAttributes: MAP_HIDDEN_FIELD_ATTRS.DEFAULT,
 					iconClass: 'icon-fb-integer',

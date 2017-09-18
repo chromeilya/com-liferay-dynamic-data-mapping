@@ -2491,6 +2491,48 @@ AUI.add(
 
 		FieldTypes['ddm-geolocation'] = GeolocationField;
 
+        var GeolocationCustomField = A.Component.create(
+            {
+                EXTENDS: Field,
+
+                prototype: {
+                    initializer: function() {
+                        var instance = this;
+
+                        Liferay.MapBase.get(
+                            instance.getInputName(),
+                            function(map) {
+                                map.on('positionChange', instance.onPositionChange, instance);
+                            }
+                        );
+                    },
+
+                    onPositionChange: function(event) {
+                        var instance = this;
+
+                        var inputName = instance.getInputName();
+
+                        var location = event.newVal.location;
+
+                        instance.setValue(
+                            JSON.stringify(
+                                {
+                                    latitude: location.lat,
+                                    longitude: location.lng
+                                }
+                            )
+                        );
+
+                        var locationNode = A.one('#' + inputName + 'Location');
+
+                        locationNode.html(event.newVal.address);
+                    }
+                }
+            }
+        );
+
+        FieldTypes['ddm-geolocation-custom'] = GeolocationCustomField;
+
 		var TextHTMLField = A.Component.create(
 			{
 				EXTENDS: Field,
